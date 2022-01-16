@@ -38,7 +38,7 @@ include(${SWIG_USE_FILE})
 
 
 # If wheel build on Apple fetch and build OpenMP Library
-if (APPLE AND (CMAKE_OSX_ARCHITECTURES STREQUAL "arm64"))
+if (APPLE AND (NOT CMAKE_OSX_ARCHITECTURES STREQUAL "arm64"))
     include(./extern/openmp.cmake)
 else()
     find_package(OpenMP
